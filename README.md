@@ -1,4 +1,13 @@
-# sv
+# Cloud run deployment demo
+
+##  Wanted roles for deploying to cloud run
+# https://cloud.google.com/blog/products/devops-sre/deploy-to-cloud-run-with-github-actions/
+- [x] roles/artifactregistry.writer
+- [ ] roles/iam.serviceAccountUser
+- [x] roles/run.admin
+- [ ] roles/iam.workloadIdentityUser
+
+
 
 Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
