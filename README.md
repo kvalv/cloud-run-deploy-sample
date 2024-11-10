@@ -1,5 +1,8 @@
 # Cloud run deployment demo
 
+Usees [direct WIF](https://github.com/google-github-actions/auth#direct-wif) 
+See also: https://github.com/docker/login-action?tab=readme-ov-file#google-artifact-registry-gar
+
 ##  Wanted roles for deploying to cloud run
 # https://cloud.google.com/blog/products/devops-sre/deploy-to-cloud-run-with-github-actions/
 - [x] roles/artifactregistry.writer
