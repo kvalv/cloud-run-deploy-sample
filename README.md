@@ -11,40 +11,17 @@ See also: https://github.com/docker/login-action?tab=readme-ov-file#google-artif
 - [ ] roles/iam.workloadIdentityUser
 
 
+### Continuous integration step
+- Check out the repository
+- Build container image (docker)
+- ... some auth step here to be allowed to push
+- Push container image to artifact registry
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+### Continuous deployment step
 
-## Creating a project
+Relevant actions:
+- [deploy-cloudrun](https://github.com/google-github-actions/deploy-cloudrun)
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## Some links
+- Cloud run URL: https://cloud-run-deploy-747268936816.europe-west1.run.app/
+- Artifact registry https://console.cloud.google.com/artifacts/docker/ancient-sunspot-352209/europe-west1/cloud-run-deploy-repo/cloud-run-deploy?inv=1&invt=Abh1_A&project=ancient-sunspot-352209
