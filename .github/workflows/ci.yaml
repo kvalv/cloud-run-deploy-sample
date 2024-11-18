@@ -42,7 +42,7 @@ jobs:
         with:
           service: ${{ env.CLOUD_RUN_SERVICE }}
           image: "${{ env.ARTIFACT_REGISTRY }}/cloud-run-deploy:${{ github.sha }}"
-          region: ${{ env.GCP_REGION }}
+          region: europe-west1
     permissions:
       id-token: write
       contents: read
