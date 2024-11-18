@@ -1,6 +1,7 @@
 name: Build and deploy
 env:
   GCP_PROJECT_ID: 'ancient-sunspot-352209'
+  CLOUD_RUN_SERVICE: 'cloud-run-deploy'
   GCP_REGION: eu-west1
   WORKLOAD_IDENTITY_PROVIDER: 'projects/747268936816/locations/global/workloadIdentityPools/github-actions-pool/providers/github-actions-oidc'
   ARTIFACT_REGISTRY: "europe-west1-docker.pkg.dev/ancient-sunspot-352209/cloud-run-deploy-repo"
@@ -36,6 +37,11 @@ jobs:
         with:
           push: true
           tags: "${{ env.ARTIFACT_REGISTRY }}/cloud-run-deploy:${{ github.sha }}"
+      - name: Deploy
+        uses: 'google-github-actions/deploy-cloudrun@v2'
+        with:
+          service: ${{ env.CLOUD_RUN_SERVICE }}
+          image: "${{ env.ARTIFACT_REGISTRY }}/cloud-run-deploy:${{ github.sha }}"
     permissions:
       id-token: write
       contents: read
